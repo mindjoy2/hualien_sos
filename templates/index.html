@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>災情地圖 + 歷史更新範本</title>
+  <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha512‑…" crossorigin=""/> -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h2>災情地圖（可新增標記、點標記查看 / 新增更新）</h2>
+  <div id="map" style="height: 600px;"></div>
+
+  <!-- 新增標記用表單 -->
+  <div id="formPopup" style="display: none; position: absolute; background: white; padding: 10px; border: 1px solid #666;">
+    <form id="markerForm">
+      <input type="hidden" id="lat" name="lat">
+      <input type="hidden" id="lng" name="lng">
+      <div>
+        <label>文字描述：</label><br>
+        <textarea name="text" id="text" rows="3" cols="30"></textarea>
+      </div>
+      <div>
+        <label>上傳圖片：</label>
+        <input type="file" name="image" id="imageFile" accept="image/*">
+      </div>
+      <div style="margin-top: 5px;">
+        <button type="submit">送出</button>
+        <button type="button" id="cancelBtn">取消</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha512‑…" crossorigin=""></script> -->
+  <script src="{{ url_for('static', filename='js/map.js') }}"></script>
+</body>
+</html>

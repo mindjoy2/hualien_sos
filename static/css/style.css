@@ -1,0 +1,8 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+#formPopup {
+  z-index: 1000;
+  background: white;
+}
